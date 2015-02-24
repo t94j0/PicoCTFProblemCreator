@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>picoCTFProblemCreator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+</head>
+<body ng-app="picoCreator" ng-controller="picoController">
+
+<div class="container">
+	<div class="text-center">
+		<h1>PicoCTF Problem Creator</h1>
+	</div>
+	<div>
+		<form>
+
+		  <div class="form-group">
+		    <label for="autogen">Autogen</label>
+		    <select class="form-control" id="autogen" ng-options="tf.name for tf in trueFalse" ng-model="autogen"></select>
+		  </div>
+
+		  <div class="form-group">
+		    <label for="baseScore">Base Score</label>
+		    <input type="text" class="form-control" id="baseScore" ng-model="baseScore">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="Description">Description</label>
+		    <input type="text" class="form-control" id="Description" ng-model="description">
+		  </div>
+
+
+		  <div class="form-group">
+		    <label for="displayName">Display Name</label>
+		    <input type="text" class="form-control" id="displayName" ng-model="displayName">
+		  </div>
+
+
+		  <div class="form-group">
+		    <label for="grader">Grader</label>
+		    <input type="text" class="form-control" id="grader" ng-model="grader">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="hint">Hint</label>
+		    <input type="text" class="form-control" id="hint" ng-model="hint">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="pid">PID</label>
+		    <input type="text" class="form-control" id="pid" ng-model="pid">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="threshold">Threshold</label>
+		    <input type="text" class="form-control" id="threshold" ng-model="threshold">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="weightmap">Weightmap</label>
+		    <input type="text" class="form-control" id="weightmap" ng-model="weightmap">
+		  </div>
+		</form>
+
+		<div>
+			{
+				"autogen":{{autogen.name}},
+				"basescore":{{baseScore}},
+				"desc":"{{description}}",
+				"displayname": "{{displayName}}",
+				"grader":"{{grader}}",
+				"hint":"{{hint}}",
+				"pid":"{{pid}}",
+				"threshold":{{threshold}},
+				"weightmap":{{weightmap}}
+			}
+		</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	angular.module("picoCreator", []).controller("picoController", function($scope){
+		$scope.trueFalse = [
+			{name:"true"},
+			{name:"false"}
+		];
+		$scope.autogen = $scope.trueFalse[0];
+		$scope.baseScore = "20";
+		$scope.description = "<p>Hello World</p>";
+		$scope.displayName = "";
+		$scope.grader = "";
+		$scope.hint = "";
+		$scope.pid = "";
+		$scope.threshold = "";
+		$scope.weightmap = "{}";
+	});
+</script>
+</body>
+</html>
