@@ -81,23 +81,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-	angular.module("picoCreator", []).controller("picoController", function($scope){
-		$scope.trueFalse = [
-			{name:"true"},
-			{name:"false"}
-		];
-		$scope.autogen = $scope.trueFalse[0];
-		$scope.baseScore = "20";
-		$scope.description = "<p>Hello World</p>";
-		$scope.displayName = "";
-		$scope.grader = "";
-		$scope.hint = "";
-		$scope.pid = "";
-		$scope.threshold = "";
-		$scope.weightmap = "{}";
-	});
-</script>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
